@@ -21,7 +21,15 @@ console.log('By the power of graytail!')
 app.use(bodyParser.urlencoded({extended: true}))
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html')
+
+var cursor = db.collection('messages').find()
+
+db.collection('messages').find().toArray(function(err, results) {
+  console.log(results)
+  // send HTML file populated with quotes here
+})
+
+
 })
 app.post('/message', (req, res) => {
 	db.collection('messages').insertOne(req.body, (err, result) => {
