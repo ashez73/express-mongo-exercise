@@ -6,10 +6,10 @@
 </head>
 <body>
    <h2>{{base}}</h2>
-   <ul id = "update">
+   <ul>
     {{#each results}}
     	<li class="result" data-name={{name}} data-message={{message}}>
-  		{{name}}, {{message}} <button id = {{@index}}> Update </button>
+  		{{name}}, {{message}}
     	</li>
  		{{/each}}
 	</ul>
@@ -17,6 +17,7 @@
   <form action="/message" method="POST">
   	<input type="text" placeholder="name" name="name">
   	<input type="text" placeholder="message" name="message">
+  	 <button type ="button" id = "update">Update</button>
   	<button type="submit">Submit</button>
 	</form>
 	<script src="main.js"></script>

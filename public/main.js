@@ -1,13 +1,18 @@
 let update = document.getElementById('update')
-update.addEventListener('mousedown',	event	=>	{
-	let res = event.target
-	console.log(res.parentElement.dataset.name)
+update.addEventListener('click',	event	=>	{
+	let source = document.getElementsByTagName('input')[0].value
+	let message = document.getElementsByTagName('input')[1].value
 	fetch('message', {
   method: 'put',
   headers: {'Content-Type': 'application/json'},
   body: JSON.stringify({
-    'name': res.parentElement.dataset.name,
-    'message': 'I find your lack of faith disturbing.'
+    'name': source,
+    'message': message
   })
+}).then(res => {
+  if (res.ok) return res.json()
+})
+.then(data => {
+  console.log(data)
 })
 })
