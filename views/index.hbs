@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-	  <meta charset="UTF-8">
-	  <title>MY APP</title>
-	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	  <link rel ="stylesheet" href="style.css">
-	</head>
-	<body>
-		<div class="container">
-			<div class="jumbotron">
-		  	<h1 class="display-4">Express+Mongo DB!</h1>
-			  <p class="lead">Basic CRUD built with Express and Mongo DB.</p>
-			  <hr class="my-4">
-			  <p>Wrapped in Bootstrap so it doesn't look like utter crap</p>
-			  <a class="btn btn-info btn-lg" href="#" role="button">Operating guideline</a>
-			</div>
-		  <h3>Database name: {{base}}</h3>
-		  <ul class="list-group">
-		  	{{#each results}}
-		    <li class="result list-group-item" data-name={{name}} data-message={{message}}>
-		  	<span class="record">NAME: {{name}},</span><span class="record-right"> MESSAGE: {{message}}</span>
-		    </li>
-		 		{{/each}}
-			</ul>
-		  <form action="/message" method="POST">
-		  	<div class="form-group">
-		  		<label for="field1">Name</label>
-		  		<input type="text" id ="field1" class="form-control" placeholder="name" name="name">
-		  	</div>
-		  	<div class="form-group">
-		  		<label for="field2">Message</label>
-		  		<input type="text" id ="field2" class="form-control" placeholder="message" name="message">
-		  	</div>
-		  	<button type ="button" class="btn btn-warning" id = "update">Update</button>
-		  	<button type ="button" class="btn btn-danger" id = "delete">Delete</button>
-		
-		  	<button type="submit" class="btn btn-primary">Submit</button>
-			</form>
-		<div>
-		<script src="main.js"></script>
-	</body>
+
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">Express+Mongo DB!</h1>
+      <p class="lead">Basic CRUD built with Express and Mongo DB.</p>
+      <hr class="my-4">
+      <p>Wrapped in Bootstrap so it doesn't look like utter crap</p>
+      <a class="btn btn-info btn-lg" href="#" role="button">Operating guideline</a>
+    </div>
+    <h3>Database name: {{base}}</h3>
+    <ul class="list-group">
+      {{#each results}}
+      <li class="result list-group-item" data-name={{name}} data-message={{message}}>
+        <span class="record">NAME: {{name}},</span><span class="record-right"> MESSAGE: {{message}}</span>
+      </li>
+      {{/each}}
+    </ul>
+    <form action="/message" method="POST">
+      <div class="form-group">
+        <label for="field1">Name</label>
+        <input type="text" id="field1" class="form-control" placeholder="name" name="name">
+      </div>
+      <div class="form-group">
+        <label for="field2">Message</label>
+        <input type="text" id="field2" class="form-control" placeholder="message" name="message">
+      </div>
+      <button type="button" class="btn btn-warning" id="update">Update</button>
+      <button type="button" class="btn btn-danger" id="delete">Delete</button>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div>
+      <script src="main.js"></script>
+</body>
+
 </html>
