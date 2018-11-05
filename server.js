@@ -22,7 +22,7 @@ MongoClient.connect(url,{useNewUrlParser:true}, (err, client) => {
 app.get('/', (req, res) => {
 	var cursor = db.collection('messages').find()
 	db.collection('messages').find().toArray(function(err, results) {
-		res.render('index', { results, base: "test" })
+		res.render('index', { results, base: 'dbase'})
 	})
 })
 app.put('/message', (req, res) => {
